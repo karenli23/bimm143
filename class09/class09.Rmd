@@ -17,6 +17,10 @@ fna.data <- "WisconsinCancer.csv"
 wisc.df <- read.csv(fna.data)
 ```
 
+```{r}
+wisc.df
+```
+
 Let's see the first 6 rows of data
 ```{r}
 head(wisc.df)
