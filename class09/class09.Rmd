@@ -2,7 +2,7 @@
 title: 'Class 9: Breast cancer analysis with PCA and clustering'
 author: "Karen Li"
 date: "2/7/2019"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
