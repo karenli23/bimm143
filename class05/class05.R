@@ -1,7 +1,8 @@
 #' ---
-#' title: "Class 05: Data Visualization"
+#' title: "Class 5: Introfuction to R graphics"
 #' author: "Karen Li"
 #' date: "January 22, 2019"
+#' output: github_document
 #' ---
 
 #Section 2A
