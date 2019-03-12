@@ -13,6 +13,7 @@ wisc.df <- read.csv(fna.data)
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     ##            id diagnosis radius_mean texture_mean perimeter_mean area_mean
     ## 1      842302         M      17.990        10.38         122.80    1001.0
@@ -4576,6 +4577,8 @@ wisc.df <- read.csv(fna.data)
     ## 569                 0.07039 NA
 
 >>>>>>> d70947fa3e5448911a60dea1825ef8990afbfd60
+=======
+>>>>>>> cb345a7efcaf2d25282a4d0a07a8ab96a8d8776a
 Let's see the first 6 rows of data
 
 ``` r
