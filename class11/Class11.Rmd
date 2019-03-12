@@ -1,0 +1,72 @@
+---
+title: "Class 11: Structural Bioinformatics 1"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Section 1: PDB
+
+Q1. Determine the percentage of structures solved by X-Ray and Electron Microscopy. What proportion of structures are protein?
+
+```{r}
+stats <- read.csv("Data Export Summary.csv", row.names = 1)
+stats
+```
+
+```{r}
+total <- sum(stats$Total)
+stats$Total[1]/total *100
+stats$Total[3]/total *100
+```
+
+```{r}
+percent.by.method <- stats$Total/total*100
+names(percent.by.method) <rownames(stats)
+percent.by.method
+```
+
+```{r}
+sum(stats$Proteins)/total*100
+```
+
+Section 3
+
+```{r}
+library(bio3d)
+
+pdb <- read.pdb("1hsg")
+pdb$atom$resid
+aa321(pdb$atom$resid)
+```
+
+
+Q8. Use the Bio3D write.pdb() function to write out a protein only PDB file for viewing in VMD. 
+We want to select out the protein and drug only parts of these molecular PDB files.
+```{r}
+pdb <- read.pdb("1hsg")
+prot.inds <- atom.select(pdb, "protein")
+prot.inds
+```
+
+```{r}
+prot.pdb <- trim.pdb(pdb, prot.inds)
+write.pdb(prot.pdb, file = "protein.pdb")
+```
+
+```{r}
+
+
+lig.inds <- atom.select(pdb, "ligand")
+lig.pdb <- trim.pdb(pdb, lig.inds)
+write.pdb(prot.pdb, file = "ligand.pdb")
+```
+
+```{r}
+
+library(bio3d.view)
+view(pdb, "overview")
+```
+
