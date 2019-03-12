@@ -1,0 +1,71 @@
+---
+title: 'Class 7: Functions and Packages'
+author: "Karen Li"
+date: "1/29/2019"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Revisiting Functions
+
+```{r}
+source("http://tinyurl.com/rescale-R")
+```
+
+Let's try the rescale() function out
+
+```{r}
+rescale(c(1, 5, 10))
+```
+
+Let's try **rescale2()** with the **stop()** function catch for non-numeric input
+
+```{r}
+rescale2(c(1:5), "string")
+```
+
+```{r}
+x <- c(3, 7, NA, 4, 8, NA)
+which(is.na(x))
+```
+
+```{r}
+x <- c(1, 2, NA, 3, NA)
+y <- c(NA, 3, NA, 3, 4)
+
+is.na(x)
+sum(is.na(x))
+```
+
+```{r}
+is.na(x)
+is.na(y)
+is.na(x) & is.na(y)
+sum( is.na(x) & is.na(y) )
+```
+
+Take my working snippet and make my first function
+```{r}
+both_na <- function(x, y) {
+ sum( is.na(x) & is.na(y) )
+}
+
+both_na(x, y)
+```
+
+```{r}
+x <- c(NA, NA, NA)
+y1 <- c( 1, NA, NA)
+y2 <- c( 1, NA, NA, NA)
+y3 <- c( 1, NA, NA, NA, NA)
+y4 <- c( 1, NA, NA, NA, NA, NA)
+
+both_na(x, y1)
+both_na(x, y2)
+both_na(x, y3)
+both_na(x, y4)
+```
+
