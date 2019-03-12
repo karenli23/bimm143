@@ -12,10 +12,6 @@ fna.data <- "WisconsinCancer.csv"
 wisc.df <- read.csv(fna.data)
 ```
 
-``` r
-wisc.df
-```
-
     ##            id diagnosis radius_mean texture_mean perimeter_mean area_mean
     ## 1      842302         M      17.990        10.38         122.80    1001.0
     ## 2      842517         M      20.570        17.77         132.90    1326.0
