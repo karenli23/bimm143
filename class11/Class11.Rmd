@@ -64,9 +64,3 @@ lig.pdb <- trim.pdb(pdb, lig.inds)
 write.pdb(prot.pdb, file = "ligand.pdb")
 ```
 
-```{r}
-
-library(bio3d.view)
-view(pdb, "overview")
-```
-
